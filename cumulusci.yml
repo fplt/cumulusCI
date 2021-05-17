@@ -1,0 +1,24 @@
+minimum_cumulusci_version: '3.35.0'
+project:
+    name: cumulusCI
+    package:
+        name: Food-Bank
+        api_version: '50.0'
+    git:
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/cumulusCI/tests
+            options:
+                outputdir: robot/cumulusCI/results
+
+    robot_testdoc:
+        options:
+            path: robot/cumulusCI/tests
+            output: robot/cumulusCI/doc/cumulusCI_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
